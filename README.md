@@ -1,7 +1,7 @@
 # "F-ROGER" : Classic Arcade Game Clone Project 
 
 1. The player is a frog and needs to cross the road safely to the other side.
-2. Meeting his retro figure will send him to the next level.
+2. Catching his retro figure sends him to the next level.
 
 ## Table of Contents
 
@@ -15,14 +15,14 @@
 * Player can move one step at a time
 * 4 different game levels
 * Different winning spot per level
-* Coded death animation for the player
+* Coded 'run-over' animation
 * Easily create new [levels](#Example)
 
 ## Instructions:
 
 - Navigate your way with the **up, down, left, right** arrow keys
-- Hitting a car sends the player back to the safe zone
-- Use the numbers (1-4) to skip between level
+- A car hit will send the player back to the safe zone
+- Use the numbers (1-4) to skip between levels
 
 ## File System:
 
@@ -32,7 +32,7 @@
 | CSS        | \css   | style.css      |
 | JavaScript | \js    | app.js         |
 | Pictures   | \imges | sprite-name.png|
-| Markdown   | root   | README`.`md    |
+| Markdown   | root   | `README.md`    |
 
 ##  Code Explanation:
 
@@ -56,7 +56,6 @@
         EnemyLeft
         EnemyRight
         Winner
-            currentLevel
     
     Player
         reset()
@@ -88,7 +87,7 @@
 
 `GAME_DATA`
 
-- `rows`: The locations on the y-axis (delta=83, matches the engine)
+- `rows`: The locations on the y-axis (delta=83, matches the parameters from engine.js)
 - `sprites`: Enemies sprits, Sprites width
 - `player`: All the player sprites. Possible to add new player styles
 - `edges`: The space used for the enemies movement (bigger than the canvas)
@@ -100,10 +99,10 @@
 
 Has location (x, y), speed, move/stop toggle. Methods:
 
-- `engineOn()`: Start moving
-- `engineOff()`: Stop moving
-- `update(dt)`: Change x location according to the time-delta (from engine)
-- `render()`: Draw enemy
+- `engineOn()`: Start enemy moving
+- `engineOff()`: Stop enemy moving (currently not used)
+- `update(dt)`: Change x location according to the time-delta (from engine.js)
+- `render()`: Draw enemy (using engine.js)
 
 Subclasses:
 
@@ -117,17 +116,17 @@ Has location (x,y), sprites stock, move toggle. Methods:
 - `reset()`
 - `update()`: Note: using the [enemiesHolder](#Variables) object
   - Check collision of the player
-  - For optimization - preform the check only for the current row
-  - Includes coded animation of 4 frames
+  - For optimization - preforms the check only for its current row
+  - Includes coded player animation of 4 frames + car animation
   - Call the [nextLvel](#Functions) function uppon reaching the winner object
-- `render()`
-- `handleInput(keyClick)`
+- `render()`: Draw enemy (using the engine.js)
+- `handleInput(keyClick)`: Moving the player
 
 ### **Variables:**
 
 `allEnemies`
 
-- One big array which contains all objects for the engine to update/render
+- One big array which contains all objects for [engine.js](#Game-Engine) to update/render
 - Not including the player object
 
 `enemiesHolder`
@@ -194,8 +193,8 @@ Keeps the data for the game levels. Each level by an object with the structure:
 
 - Reset the enemiesHolder
 - Call the level builder function (creates the level)
-- Transform all enemies to one array for the render method of the engine
-- Egnite engines for all objects
+- Transform all enemies to one array for the render method of engine.js
+- Turn (vehicle) engines for all objects 
 - Resets the player
   
 `nextLevel(finishedLevel)`
@@ -210,7 +209,7 @@ Keeps the data for the game levels. Each level by an object with the structure:
 `addEventListener`
 
 - Using *allowMove* to prevent constant key press
-- Send input to player or to the skip levels part
+- Send input to player or skip levels
   
   | Key | Action |
   |:---|:---|
@@ -220,5 +219,12 @@ Keeps the data for the game levels. Each level by an object with the structure:
   | 4 | Level 4 |
   | 5 | Game Over |
 
+#### Start The Game:
 
 [startGame(levels['level_1']);](#"F-ROGER"-:-Classic-Arcade-Game-Clone-Project)
+
+### The Game Engine:
+
+* The game engine is `engine.js`, and self explained inside the code
+* The game uses `resources.js` for caching images.
+* Both of this files I did not write or coded, only changed few parameters.
