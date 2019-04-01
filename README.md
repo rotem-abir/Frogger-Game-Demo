@@ -145,6 +145,7 @@ Keeps the data for the game levels. Each level by an object with the structure:
     - *Second* enemies speed (in seconds to complete one screen)
     - *Third* array of intervals between enemies, in *%*
       - **0** refers to the one [edge](#Game-Settings), **100** refers to the other
+- **UPADETE**: The first element of each level (e.x `level_#[0]`) is used for the decription of an alert box by the [function](#Functions) `startGame(level)`.
 
 #### Example:
 
@@ -188,9 +189,10 @@ Keeps the data for the game levels. Each level by an object with the structure:
 - Create enemies, fit direction by row automatically
 - Adds each enemy to the [enemiesHolder](#Variables)
 - When reaches row 7 - creates the winning spot of the level
-- 
+  
 `startGame(level)`
 
+- **UPDATE**: Alerting the player before starting each level, with a double line alert box (taken from the `levels` object)
 - Reset the enemiesHolder
 - Call the level builder function (creates the level)
 - Transform all enemies to one array for the render method of engine.js
