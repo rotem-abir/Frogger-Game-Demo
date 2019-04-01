@@ -8,6 +8,7 @@ const GAME_DATA = {
         6: ['images/enemy-truck.png', 202],
         7: ['images/gem-green.png', 61]
     },
+    // the sprires for the player "frog". More player styles can be added as new objects with the same keys.
     players: {
         frog: {
             up: 'images/char-frog.png',
@@ -196,7 +197,7 @@ const enemiesHolder = {
 // Level structure: row, speed [enemies intervals 0%-100%]
 // intervals number = enemies number, Row 7 is the 'winner' spot, from [0-66]
 const levels = {
-    level_1: [[],
+    level_1: [["This is just a welcome greet before you start:", "Hey F-Roger! Use the arrow keys to reach your retro avatar."],
         [],
         [2, 11, [18, 82]],
         [3, 10, [18, 82]],
@@ -206,7 +207,7 @@ const levels = {
         [7, 300, [0]]
     ],
 
-    level_2: [[],
+    level_2: [["You have finished the first level.", "Nice job, but it was too easy. If you agree, click 'OK'"],
         [],
         [2, 9, [8, 82]],
         [3, 8, [18, 92]],
@@ -216,7 +217,7 @@ const levels = {
         [7, -240, [66]]
     ],
 
-    level_3: [[],
+    level_3: [["You accomplished another level.", "Not bad, but you can go further!"],
         [],
         [2, 8, [35, 65, 95]],
         [3, 7, [10, 30, 70]],
@@ -226,7 +227,7 @@ const levels = {
         [7, 180, [22]]
     ],
 
-    level_4: [[],
+    level_4: [["You made it to the last level", "After all, this is just a demo version with 4 levels."],
         [],
         [2, 7, [15, 35, 55]],
         [3, 7, [10, 30, 70, 90]],
@@ -236,7 +237,7 @@ const levels = {
         [7, 120, [44]]
     ],
 
-    game_over: [[],
+    game_over: [["- GAME OVER - ", "Congrats. To buy the full version %$#@#@!#!@#!"],
         [],
         [2, 999, [18, 46, 70]],
         [3, 888, [10, 40, 70, 90]],
@@ -279,7 +280,11 @@ function BuildLevel([row, speed, intervals = [50]]) {
     }
 }
 
-function startGame(level) {
+function startGame(level) { 
+    alert(`
+    ${level[0][0]}.
+
+    ${level[0][1]}`);
     // reset enemies and creates the level enemies if recieved a level, otherwise just erase the board
     for (let i = 2; i <= 7; i++) {
         enemiesHolder[i] = [];
@@ -294,6 +299,7 @@ function startGame(level) {
     }, 1500);
 
     player.reset();
+
 }
 
 function nextLevel(finishedLevel) {
