@@ -9,6 +9,7 @@
   - [Instructions](#instructions)
   - [File System](#file-system)
   - [Code Explanation](#code-explanation)
+  - [Game Engine](#game-engine)
 
 ## Features:
 
@@ -225,8 +226,10 @@ Keeps the data for the game levels. Each level by an object with the structure:
 
 [startGame(levels['level_1']);](#"F-ROGER"-:-Classic-Arcade-Game-Clone-Project)
 
-### The Game Engine:
+## Game Engine:
 
-* The game engine is `engine.js`, and self explained inside the code
-* The game uses `resources.js` for caching images.
-* Both of this files I did not write or coded, only changed few parameters.
+* The game engine is `engine.js`, for initializing, the canvas and rendering
+* The game uses `resources.js` for caching images
+* Both files are self explained with full comments inside the code
+* Both of these files I **did not** code - I only changed few parameters.
+  
