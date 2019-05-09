@@ -111,8 +111,8 @@ var Engine = (function(global) {
                 'images/stone-block.png',   // Row 1 of 5 of stone
                 'images/stone-block.png',   // Row 2 of 5 of stone
                 'images/stone-block.png',   // Row 3 of 5 of stone
-                'images/stone-block.png',   // Row 4 of 5 of stone      was not
-                'images/stone-block.png',   // Row 5 of 5 of stone      was not
+                'images/stone-block.png',   // Row 4 of 5 of stone      added
+                'images/stone-block.png',   // Row 5 of 5 of stone      added
                 'images/grass-block.png',   // Row 1 of 2 of grass
                 'images/grass-block.png'    // Row 2 of 2 of grass
             ],
