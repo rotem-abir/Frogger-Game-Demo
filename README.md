@@ -146,7 +146,7 @@ Keeps the data for the game levels. Each level by an object with the structure:
     - *Second* enemies speed (in seconds to complete one screen)
     - *Third* array of intervals between enemies, in *%*
       - **0** refers to the one [edge](#Game-Settings), **100** refers to the other
-- **UPADETE**: The first element of each level (e.x `level_#[0]`) is used for the decription of an alert box by the [function](#Functions) `startGame(level)`.
+- **UPDATE**: The first element of each level (e.x `level_#[0]`) is used for the decription of an alert box by the [function](#Functions) `startGame(level)`.
 
 #### Example:
 
@@ -162,6 +162,8 @@ Keeps the data for the game levels. Each level by an object with the structure:
     ]
 ```
 
+The level structure according to the above array is as follows:
+
 | Row | Speed (seconds) | Location 1 | Location 2 | Location 3 | Location 4 (...) | Element type *** |
 | :---: | :---: | :--- | :--- | :--- | :--- |:--- |
 | 7 | 3 minutes | 22% ** | - | - | - | Retro figure |
@@ -171,13 +173,13 @@ Keeps the data for the game levels. Each level by an object with the structure:
 | 3 | 7 | 10% | 30% | 70% | - | Enemy Left |
 | 2 | 8 | 35% | 65% | 95% * | - | Enemy (Slow) |
 | 1 | [ ] | - | - | - | - | - |
-| 0 | [ ] | - | - | - | - | <Starting spot> |
+| 0 | [ ] | - | - | - | - | *Starting spot* |
 
 `*` Note: The actual visible screen is between 8% to 82%. Therefore, enemy 3 on row 2 is off screen.
 
 `**` The actual visible screen for the winner object is between 0% to 66%. Therfore, it will be located on 1/3 of the screen
 
-`***` The **style** is just a helper and not part of the level data
+`***` The **Element type** is just a README helper, and not part of the level data
 
 ![Level 3](images/readme.jpg)
 
