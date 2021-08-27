@@ -1,7 +1,7 @@
 # "F-ROGER" : Classic Arcade Game Clone Project 
 
 1. The player is a frog and needs to cross the road safely to the other side.
-2. Catching his retro figure sends him to the next level.
+2. Catching his retro figure launches him to the next level.
 
 ## Table of Contents
 
@@ -162,16 +162,16 @@ Keeps the data for the game levels. Each level by an object with the structure:
     ]
 ```
 
-| Row | Speed (seconds) | Location 1 | Location 2 | Location 3 | Location 4 (...) | Enemy type *** |
+| Row | Speed (seconds) | Location 1 | Location 2 | Location 3 | Location 4 (...) | Element type *** |
 | :---: | :---: | :--- | :--- | :--- | :--- |:--- |
-| 7 | 3 minutes | 22% ** | - | - | - | Winning Spot |
+| 7 | 3 minutes | 22% ** | - | - | - | Retro figure |
 | 6 | 6 | 30% | 80% | - | - | Enemy (Truck) |
 | 5 | 3 | 60% | - | - | - | Enemy (Fast) |
 | 4 | 7 |20% | 40% | 80% | - | Enemy Right |
 | 3 | 7 | 10% | 30% | 70% | - | Enemy Left |
 | 2 | 8 | 35% | 65% | 95% * | - | Enemy (Slow) |
 | 1 | [ ] | - | - | - | - | - |
-| 0 | [ ] | - | - | - | - | - |
+| 0 | [ ] | - | - | - | - | <Starting spot> |
 
 `*` Note: The actual visible screen is between 8% to 82%. Therefore, enemy 3 on row 2 is off screen.
 
