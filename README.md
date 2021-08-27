@@ -162,7 +162,7 @@ Keeps the data for the game levels. Each level by an object with the structure:
     ]
 ```
 
-| Row | Speed (seconds) | Location 1 | Location 2 | Location 3 | Location 4... | Style *** |
+| Row | Speed (seconds) | Location 1 | Location 2 | Location 3 | Location 4 (...) | Enemy type *** |
 | :---: | :---: | :--- | :--- | :--- | :--- |:--- |
 | 7 | 3 minutes | 22% ** | - | - | - | Winning Spot |
 | 6 | 6 | 30% | 80% | - | - | Enemy (Truck) |
